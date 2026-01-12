@@ -3,14 +3,12 @@ package ru.practicum.moviehub.http;
 import com.google.gson.*;
 import com.sun.net.httpserver.HttpExchange;
 import ru.practicum.moviehub.model.Movie;
-import ru.practicum.moviehub.model.MovieException;
 
 import java.io.IOException;
 import java.nio.charset.StandardCharsets;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import java.util.Optional;
 
 public class MoviesHandler extends BaseHttpHandler{
 
@@ -97,7 +95,6 @@ public class MoviesHandler extends BaseHttpHandler{
             }
 
             String requestBody = new String(ex.getRequestBody().readAllBytes(), StandardCharsets.UTF_8);
-
 
             try {
                 JsonElement jsonElement = JsonParser.parseString(requestBody);
