@@ -10,7 +10,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-public class MoviesHandler extends BaseHttpHandler{
+public class MoviesHandler extends BaseHttpHandler {
 
     private String extractYearParam(String query) {
         String[] params = query.split("&");
@@ -68,13 +68,11 @@ public class MoviesHandler extends BaseHttpHandler{
                                 "   }");
                     }
                 }
-            }
-            catch (NumberFormatException e) {
+            } catch (NumberFormatException e) {
                 sendJson(ex, 400, "{\n" +
                         "     \"error\": \"Некорректный ID\",\n" +
                         "   }");
-            }
-            catch (Exception exception) {
+            } catch (Exception exception) {
                 sendJson(ex, 400, " {\n" +
                         "     \"error\": \"Ошибка вывода информации о фильмах\",\n" +
                         "   }");
@@ -120,8 +118,7 @@ public class MoviesHandler extends BaseHttpHandler{
                 } else {
                     sendJson(ex, 422, "{\"error\": \"Ошибка добавления фильма\", \"details\": \"Данные переданы не в формате JSON\"}");
                 }
-            }
-            catch (Exception exception) {
+            } catch (Exception exception) {
                 sendJson(ex, 422, " {\n" +
                         "     \"error\": \"Ошибка добавления фильма\",\n" +
                         "   }");
@@ -144,13 +141,11 @@ public class MoviesHandler extends BaseHttpHandler{
                             "     \"error\": \"Ошибка при удалении фильма\",\n" +
                             "   }");
                 }
-            }
-            catch (NumberFormatException e) {
+            } catch (NumberFormatException e) {
                 sendJson(ex, 400, "{\n" +
                         "     \"error\": \"Некорректный ID\",\n" +
                         "   }");
-            }
-            catch (Exception exception) {
+            } catch (Exception exception) {
                 sendJson(ex, 400, "{\n" +
                         "     \"error\": \"Ошибка при удалении фильма\",\n" +
                         "   }");
