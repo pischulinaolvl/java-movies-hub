@@ -38,7 +38,7 @@ public class MoviesStore {
         movies.clear();
     }
 
-    public HashMap<Integer,Movie> getMovies(){
+    public HashMap<Integer,Movie> getMovies() {
         return movies;
     }
 
