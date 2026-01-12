@@ -96,7 +96,7 @@ public class MoviesHandler extends BaseHttpHandler {
 
             try {
                 JsonElement jsonElement = JsonParser.parseString(requestBody);
-                if(jsonElement.isJsonObject()) {
+                if (jsonElement.isJsonObject()) {
                     JsonObject jsonObject = jsonElement.getAsJsonObject();
                     String title;
                     if (jsonObject.get("title").isJsonNull()) {
