@@ -15,12 +15,12 @@ public class MoviesStore {
         movies = new HashMap<Integer,Movie>();
     }
 
-    public int addMovie(Movie newMovie){
+    public int addMovie(Movie newMovie) {
         movies.put(newMovie.getId(), newMovie);
         return newMovie.getId();
     }
 
-    public Optional<Movie> getMovie(int id){
+    public Optional<Movie> getMovie(int id) {
         return Optional.ofNullable(movies.get(id));
     }
 
@@ -34,7 +34,7 @@ public class MoviesStore {
         return matchingMovies;
     }
 
-    public void clearMovies(){
+    public void clearMovies() {
         movies.clear();
     }
 
@@ -42,7 +42,7 @@ public class MoviesStore {
         return movies;
     }
 
-    public void removeMovie(int id){
+    public void removeMovie(int id) {
         movies.remove(id);
     }
 }
