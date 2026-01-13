@@ -8,8 +8,7 @@ import java.util.List;
 import java.util.Optional;
 
 public class MoviesStore {
-    //private static int currentId = 1;
-    private static HashMap<Integer,Movie> movies;
+    private final HashMap<Integer,Movie> movies;
 
     public MoviesStore() {
         movies = new HashMap<Integer,Movie>();

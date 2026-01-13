@@ -31,12 +31,6 @@ public class MoviesApiTest {
 
     }
 
-    /*@BeforeEach
-    void beforeEach() {
-        MoviesStore movieStore = server.getMoviesStore();
-        movieStore.clearMovies();
-    }*/
-
     @AfterAll
     static void afterAll() {
         server.stop();

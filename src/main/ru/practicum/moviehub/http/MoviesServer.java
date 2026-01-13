@@ -5,23 +5,23 @@ import java.io.IOException;
 import java.net.InetSocketAddress;
 
 public class MoviesServer {
-    private static HttpServer server;
-    private static MoviesStore moviesStore;
+    private HttpServer server;
+    private MoviesStore moviesStore;
 
-    public MoviesServer(int port) {
+    /*public MoviesServer(int port) {
+
+    }*/
+
+    public MoviesServer(MoviesStore newMoviesStore, int port) {
         try {
             server = HttpServer.create(new InetSocketAddress(port), 0);
 
             // Добавьте контекст для /movies и укажите созданный хендлер
-            server.createContext("/movies", new MoviesHandler());
+            server.createContext("/movies", new MoviesHandler(newMoviesStore));
 
         } catch (IOException e) {
             throw new RuntimeException("Не удалось создать HTTP-сервер", e);
         }
-    }
-
-    public MoviesServer(MoviesStore newMoviesStore, int port) {
-        this(port);
         moviesStore = newMoviesStore;
     }
 
@@ -35,7 +35,7 @@ public class MoviesServer {
         System.out.println("Сервер остановлен");
     }
 
-    public static MoviesStore getMoviesStore() {
+    public MoviesStore getMoviesStore() {
         return moviesStore;
     }
 }
